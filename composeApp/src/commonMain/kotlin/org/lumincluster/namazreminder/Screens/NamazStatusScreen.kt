@@ -167,7 +167,7 @@ fun NamazStatusScreen(onNext: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        // Top bar: Icon with text, and notification icon on right
+        // Top bar: Icon wigit th text, and notification icon on right
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
