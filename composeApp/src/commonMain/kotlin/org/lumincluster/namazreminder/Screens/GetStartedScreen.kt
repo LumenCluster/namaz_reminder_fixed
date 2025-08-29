@@ -33,6 +33,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
@@ -208,12 +210,14 @@ fun FirstTimeUserScreen(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(vertical = 8.dp)
+                               .padding(horizontal = 12.dp, vertical = 6.dp) // <-- add vertical padding
                         ) {
                             Text(
                                 text = prayer,
                                 style = MaterialTheme.typography.body1,
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier.weight(1f),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
                             )
                             PrayerStatusToggle(
                                 currentStatus = prayerStatuses[prayer] ?: PrayerStatus.NOT_OFFERED,

@@ -118,7 +118,7 @@ fun PrayerStatusToggle(
         enabled = enabled, //  Apply the passed enabled value here
         modifier = Modifier
             .width(120.dp)
-            .height(40.dp)
+
     ) {
         Text(statusText, fontSize = 14.sp)
     }
@@ -145,11 +145,7 @@ fun MainCalenderScreen(onNext: () -> Unit) {
     }
     var currentMonthIndex by remember { mutableStateOf(initialMonthIndex.coerceIn(0, calendarData.lastIndex)) }
 
-//    var selectedDate by remember {
-//        mutableStateOf(
-//            Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
-//        )
-//    }
+
     var selectedDate by remember {
         mutableStateOf(
             Clock.System.todayIn(TimeZone.currentSystemDefault()).minus(1, DateTimeUnit.DAY)
